@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    {#    <div class="p-5 mb-4 bg-light rounded-3">#}
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Settings</h1>
+        <br>
+        <h3>Email: {{ settings.email }}</h3>
+        <h3>Paypal Email: {{ settings.paypal_email }}</h3>
+        <h3>Paypal Password: {{ settings.paypal_password }}</h3>
+        <h3>Address: {{ settings.address }}</h3>
+        <h3>Intervals for checking: {{ settings.checking_interval }}</h3>
+
+        <br>
+        <a href="{% url 'settings_update' 1 %}" class="nav-link px-2 text-secondary">
+            <button type="button" class="btn
+                btn-success">Make Changes
+            </button>
+        </a>
+
+    </div>
+    {#    </div>#}
+
+
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    <div class="row">
+
+        <div class="col">
+            <div class="container-fluid py-5">
+                <h3 class="display-5 fw-bold">{{ website.name }}</h3>
+                <br>
+                <h5>URL: <a href={{ website.url }}>{{ website.url }}</a></h5>
+                <h5>Account Email: {{ website.account_email }}</h5>
+                <h5>Account Password: {{ website.account_password }}</h5>
+
+                <br>
+                <a href="{% url 'website_delete' website.pk %}" class="nav-link px-2 text-secondary">
+                    <button type="button" class="btn
+                btn-warning">Delete
+                    </button>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="container-fluid py-5">
+
+                <div style="height:500px;width:700px;border:1px solid #ccc ;overflow:auto;">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Available</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for product in products %}
+                            {% if not product.is_purchased %}
+
+                                {% if product.is_available %}
+
+                                    <tr class="table-success">
+                                        <td><a class="no_underline"
+                                               href="{% url 'product' product.pk %}">{{ product.name }}</a></td>
+                                        <td>€ {{ product.price }}</td>
+                                        <td>Yes</td>
+                                    </tr>
+
+
+                                {% else %}
+
+                                    <tr class="table-danger">
+                                        <td><a class="no_underline"
+                                               href="{% url 'product' product.pk %}">{{ product.name }}</a></td>
+                                        <td>€ {{ product.price }}</td>
+                                        <td>No</td>
+                                    </tr>
+
+                                {% endif %}
+                            {% endif %}
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}

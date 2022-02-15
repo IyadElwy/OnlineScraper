@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Scraper</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex  align-items-center justify-content-center ">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            </a>
+
+            <ul class="nav col-lg-auto ">
+                <li><a href="{% url 'home' %}" class="nav-link px-2 text-secondary">
+                    <button type="button" class="btn btn-primary">Home</button>
+                </a></li>
+                <li><a href="{% url 'settings' 1 %}" class="nav-link px-2 text-secondary">
+                    <button type="button" class="btn
+                btn-primary">Settings
+                    </button>
+                </a></li>
+                <li><a href="{% url 'create_website' %}" class="nav-link px-2 text-secondary">
+                    <button type="button" class="btn
+                btn-success">Add Website
+                    </button>
+                </a></li>
+                <li><a href="{% url 'create_product' %}" class="nav-link px-2 text-secondary">
+                    <button type="button" class="btn
+                btn-warning">Add Product
+                    </button>
+                </a></li>
+            </ul>
+
+
+        </div>
+    </div>
+</header>
+
+
+<div>
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+<script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+
+</body>
+
+
+</html>

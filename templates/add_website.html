@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <br>
+    <div class="container">
+        <h1>Add Website</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <button class="btn btn-success ml-2" type="submit">Save</button>
+            <button onclick="history.back()" class="btn btn-danger ml-2" type="button">Cancel</button>
+
+        </form>
+        <br>
+
+    </div>
+
+
+{% endblock content %}
