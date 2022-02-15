@@ -6,6 +6,5 @@ class MainportalConfig(AppConfig):
     name = 'MainPortal'
 
     def ready(self):
-        print(
-            "yoooooooo"
-        )
+        import scraper
+        scraper.start()
