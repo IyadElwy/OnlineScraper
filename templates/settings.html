@@ -12,7 +12,7 @@
         <h3>Paypal Email: {{ settings.paypal_email }}</h3>
         <h3>Paypal Password: {{ settings.paypal_password }}</h3>
         <h3>Address: {{ settings.address }}</h3>
-        <h3>Intervals for checking: {{ settings.checking_interval }}</h3>
+        <h3>Intervals for checking: {{ settings.checking_interval }} Minutes</h3>
 
         <br>
         <a href="{% url 'settings_update' 1 %}" class="nav-link px-2 text-secondary">

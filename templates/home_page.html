@@ -55,10 +55,12 @@
                         {% if product.is_available %}
 
                             <tr class="table-success">
-                                <td><a class="no_underline" href="{% url 'product' product.pk %}">{{ product.name }}</a>
+                                <td><a class="no_underline"
+                                       href="{% url 'product' product.pk %}">{{ product.name }}</a>
                                 </td>
                                 <td><a class="no_underline"
-                                       href="{% url 'website' product.website.pk %}">{{ product.website.name }}</a></td>
+                                       href="{% url 'website' product.website.pk %}">{{ product.website.name }}</a>
+                                </td>
                                 <td>€ {{ product.price }}</td>
                                 <td>Yes</td>
                             </tr>
@@ -67,10 +69,12 @@
                         {% else %}
 
                             <tr class="table-danger">
-                                <td><a class="no_underline" href="{% url 'product' product.pk %}">{{ product.name }}</a>
+                                <td><a class="no_underline"
+                                       href="{% url 'product' product.pk %}">{{ product.name }}</a>
                                 </td>
                                 <td><a class="no_underline"
-                                       href="{% url 'website' product.website.pk %}">{{ product.website.name }}</a></td>
+                                       href="{% url 'website' product.website.pk %}">{{ product.website.name }}</a>
+                                </td>
                                 <td>€ {{ product.price }}</td>
                                 <td>No</td>
                             </tr>
