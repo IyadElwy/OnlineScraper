@@ -15,7 +15,6 @@ def notify_by_email(product: Product):
                      f'<h2>Product {product.name} available</h2>'
                      f'<h2>Check it out at {product.url}</h2>')
     try:
-
         sg = sendgrid.SendGridAPIClient(settings.SENDGRID_API)
         response = sg.send(message)
         print(response.status_code)
@@ -29,7 +28,7 @@ def change_product_status(chosen_product: Product):
 
 def nike_scraper(product: Product):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, slow_mo=100)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto(product.url)
         check_out_box = page.locator('text=In den Warenkorb').first.text_content()
